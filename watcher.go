@@ -70,6 +70,15 @@ func WatchPods(clientset *kubernetes.Clientset, namespace string, sel fields.Sel
 		funcs)
 }
 
+func WatchPVCs(clientset *kubernetes.Clientset, namespace string, sel fields.Selector, funcs cache.ResourceEventHandlerFuncs) (cache.Store, cache.Controller) {
+	watchlist := cache.NewListWatchFromClient(clientset.CoreV1().RESTClient(), "persistentvolumeclaims", namespace, sel)
+	return cache.NewInformer(
+		watchlist,
+		&core_v1.PersistentVolumeClaim{},
+		time.Minute*3,
+		funcs)
+}
+
 func FindPod(clientset *kubernetes.Clientset, namespace string, podId string) (*core_v1.Pod, error) {
 	return clientset.CoreV1().Pods(namespace).Get(podId, meta_v1.GetOptions{})
 }
