@@ -18,7 +18,7 @@ func TestGetPods(t *testing.T) {
 		return
 	}
 
-	config, err := kubeconfig.Load("", "")
+	config, err := kubeconfig.Load("")
 	assert.NoError(t, err)
 
 	// create the clientset
@@ -37,7 +37,7 @@ func TestWatchEvents(t *testing.T) {
 		return
 	}
 
-	config, err := kubeconfig.Load("", "")
+	config, err := kubeconfig.Load("")
 	assert.NoError(t, err)
 
 	// create the clientset
@@ -84,7 +84,7 @@ func TestGetNodes(t *testing.T) {
 		return
 	}
 
-	config, err := kubeconfig.Load("", "")
+	config, err := kubeconfig.Load("")
 	assert.NoError(t, err)
 
 	// create the clientset
