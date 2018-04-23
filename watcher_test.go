@@ -1,7 +1,7 @@
 package kubemon
 
 import (
-	"bitbucket.org/linkernetworks/aurora/src/kubeconfig"
+	"github.com/linkernetworks/kubeconfig"
 	"bitbucket.org/linkernetworks/aurora/src/logger"
 
 	"github.com/stretchr/testify/assert"
