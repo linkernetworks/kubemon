@@ -1,7 +1,7 @@
 package kubemon
 
 import (
-	"bitbucket.org/linkernetworks/aurora/src/logger"
+	"github.com/c9s/gomon/logger"
 	"github.com/linkernetworks/kubeconfig"
 
 	"os"
